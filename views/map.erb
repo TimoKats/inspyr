@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>inspyr</title>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js"></script>
+    <style type="text/css">
+    html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form method="POST" action="/map">
+            From node:  <input type="text" size="40" name="from_node" placeholder="leave blank for new mindmap..." />
+            Add:        <input type="text" size="40" name="to_node"   placeholder="leave blank for automated suggestion..." />
+            <input type="submit" />
+        </form>
+    </center>
+    <p><%=@keyword%></p>
+    <p><%=@association%></p>
+    <div id="container"></div>
+    <script>
+        anychart.onDocumentReady(function () {
+            anychart.data.loadJsonFile("graph.json",
+                function (data) {
+                    var chart = anychart.graph(data);
+                    var nodes = chart.nodes();
+                    chart.nodes().labels().enabled(true);
+                    chart.nodes().labels().format("{%id}");
+                    chart.nodes().labels().fontSize(12);
+                    chart.nodes().labels().fontWeight(600);
+
+                    nodes.normal().height(30);
+                    nodes.hovered().height(40);
+                    nodes.selected().height(40);
+
+                    nodes.normal().fill("#44dbcc");
+                    nodes.hovered().fill("#6dedc7");
+                    nodes.selected().fill("#6dedc7");
+
+                    nodes.stroke(null);
+                    chart.container("container").draw();
+                });
+        });
+    </script>
+</body>
+
+</html>

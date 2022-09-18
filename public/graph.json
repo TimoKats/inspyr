@@ -1,0 +1,1 @@
+{"nodes":[{"id":"intelligence"},{"id":"achieving"},{"id":"articulated"},{"id":"maximize"}],"edges":[{"from":"artificial","to":"achieving"},{"from":"intelligence","to":"articulated"},{"from":"achieving","to":"maximize"}]}
