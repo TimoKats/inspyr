@@ -18,13 +18,11 @@
 <body>
     <center>
         <form method="POST" action="/map">
-            From node:  <input type="text" size="40" name="from_node" placeholder="leave blank for new mindmap..." />
+            From node:  <%=@from_node_menu%>
             Add:        <input type="text" size="40" name="to_node"   placeholder="leave blank for automated suggestion..." />
             <input type="submit" />
         </form>
     </center>
-    <p><%=@keyword%></p>
-    <p><%=@association%></p>
     <div id="container"></div>
     <script>
         anychart.onDocumentReady(function () {

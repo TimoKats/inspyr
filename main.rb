@@ -4,6 +4,9 @@ require 'sinatra'
 require 'tokenizer'
 require 'json'
 
+
+### JSON ###
+
 def send_json(from_node, to_node)
     graph = JSON.parse(File.read('public/graph.json'))
     graph["nodes"].push({"id" => to_node})
@@ -18,6 +21,8 @@ def initiate_json(keyword)
     graph["nodes"].push({"id" => keyword})
     File.write("public/graph.json", JSON.dump(graph))
 end
+
+### NLP ###
 
 def get_association_candidates(corpus, locations)
     candidates = Array.new
@@ -57,7 +62,20 @@ def get_corpus
     return processed_corpus
 end
 
-### pages ###
+### HTML ###
+
+def from_node_menu()
+    menu = "<select name='from_node'>\n"
+    graph = JSON.parse(File.read('public/graph.json'))
+
+    graph["nodes"].each do |node|
+        menu += "<option value=" + node["id"] + ">" + node["id"] + "</option>\n"
+    end
+    return menu + "\n</select>"
+end
+
+
+### page ###
 
 get '/' do
     erb :index
@@ -67,8 +85,13 @@ post '/map' do
     if params[:form] == "start brainstorming"
         initiate_json(params["keyword"])
     else
-        association = get_association(get_corpus, params[:from_node])
+        if params[:to_node] == ""
+            association = get_association(get_corpus, params[:from_node])
+        else
+            association = params[:to_node]
+        end
         send_json(params[:from_node], association) 
     end
+    @from_node_menu = from_node_menu
     erb :map
 end

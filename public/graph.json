@@ -1,1 +1,1 @@
-{"nodes":[{"id":"intelligence"},{"id":"achieving"},{"id":"articulated"},{"id":"maximize"}],"edges":[{"from":"artificial","to":"achieving"},{"from":"intelligence","to":"articulated"},{"from":"achieving","to":"maximize"}]}
+{"nodes":[{"id":"polska"},{"id":"test"},{"id":"instance"},{"id":"wutwut"},{"id":"systems"}],"edges":[{"from":"polska","to":"test"},{"from":"test","to":"instance"},{"from":"test","to":"wutwut"},{"from":"test","to":"systems"}]}
