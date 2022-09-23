@@ -67,7 +67,6 @@ end
 def from_node_menu()
     menu = "<select name='from_node'>\n"
     graph = JSON.parse(File.read('public/graph.json'))
-
     graph["nodes"].each do |node|
         menu += "<option value=" + node["id"] + ">" + node["id"] + "</option>\n"
     end
