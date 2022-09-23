@@ -5,14 +5,7 @@
     <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-graph.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js"></script>
-    <style type="text/css">
-    html, body, #container {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -20,7 +13,7 @@
         <form method="POST" action="/map">
             From node:  <%=@from_node_menu%>
             Add:        <input type="text" size="40" name="to_node"   placeholder="leave blank for automated suggestion..." />
-            <input type="submit" />
+            <input type="submit" value="add node"/>
         </form>
     </center>
     <div id="container"></div>
@@ -48,6 +41,7 @@
                 });
         });
     </script>
+    <%=footer%>
 </body>
 
 </html>

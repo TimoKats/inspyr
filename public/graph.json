@@ -1,1 +1,1 @@
-{"nodes":[{"id":"polska"},{"id":"test"},{"id":"instance"},{"id":"wutwut"},{"id":"systems"}],"edges":[{"from":"polska","to":"test"},{"from":"test","to":"instance"},{"from":"test","to":"wutwut"},{"from":"test","to":"systems"}]}
+{"nodes":[{"id":"empty"}],"edges":[]}

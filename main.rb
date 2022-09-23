@@ -1,9 +1,9 @@
+# code written by Timo Kats
 # main.rb
-# requires sinatra, thin/puma and http, tokenizer and json
+# requires sinatra, thin/puma and http, tokenizer (and json)
 require 'sinatra'
 require 'tokenizer'
 require 'json'
-
 
 ### JSON ###
 
@@ -74,10 +74,14 @@ def from_node_menu()
     return menu + "\n</select>"
 end
 
+def footer()
+    return "<footer style='padding-left: 15px'>Created by Timo Kats</footer>"
+end
 
 ### page ###
 
 get '/' do
+    @footer = footer()
     erb :index
 end
 
@@ -92,6 +96,7 @@ post '/map' do
         end
         send_json(params[:from_node], association) 
     end
+    @footer = footer
     @from_node_menu = from_node_menu
     erb :map
 end
