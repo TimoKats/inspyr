@@ -11,7 +11,7 @@ Next, you can download this repository and run `ruby main.rb` in your command li
 ![Screenshot of inspyr](https://github.com/TimoKats/medium_articles/blob/759fad4a0edb164d56571c0fc8a21f765452f0e3/img/screenshot%20inspyr.png "a title")
 
 ### How it works
-The app opens with aksing you an initial keyword. This is the center of your mindmap that you start brainstorming with. Next, you'll be linked to an empty mindmap starting with your keyword. Here, you can fill in the mindmap through either adding nodes *with manually set values* or *automatically generated values*. [This loom video shows a walkthrough of this process](https://www.loom.com/share/16437175567f413cb7c2807412d151e5).
+The app opens with aksing you an initial keyword. This is the center of your mindmap that you start brainstorming with. Next, you'll be linked to an empty mindmap starting with your keyword. Here, you can fill in the mindmap through either adding nodes *with manually set values* or *automatically generated values*. [This loom video shows a walkthrough of this process](https://www.loom.com/share/4c8f03ae9125435b94856c82d4d9c77d?sid=0535ebb7-8cc8-4333-b907-a46861601e4a).
 
 ### Contact
 I'm always open to converse/collaborate with other developers. If you want to contact me, feel free to send me an [email](mailto:tpakats@gmail.com).
